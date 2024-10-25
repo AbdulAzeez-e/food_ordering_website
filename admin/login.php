@@ -52,7 +52,8 @@
 if(isset($_POST['submit'])){
     //Process for login
     //1. Get the data from login form
-     $username= $_POST['username'];
+     //$username= $_POST['username'];
+     $username= mysqli_real_escape_string( $conn, $_POST['username']);
      $password = md5($_POST['password']);
 
      //2. SQL to check whether the user with username and password exit or not
